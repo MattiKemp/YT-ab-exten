@@ -1,0 +1,37 @@
+{
+    "manifest_version":2,
+    "name":"YouTube adblocker",
+    "version":"1.0",
+    "description":"",
+    "icons":{
+        "128":"icon128.png",
+        "48":"icon48.png",
+        "16":"icon16.png"
+    },
+    "page_action":{
+        "default_icon":"icon16.png",
+        "default_popup":"popup.html",
+        "default_title":"Canvas Fix"
+    },
+    "options_page" :"options.html",
+    "background":{
+        "scripts":["eventPage.js"],
+        "persistent":false
+    },
+    "content_scripts":[
+        {
+            "matches":["https://youtube.com/*"],
+            "js":["content.js"],
+            "css":["content.css"],
+            "run_at": "document_start"
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "https://youtube.com/*",
+        "storage",
+        "contextMenus",
+        "webNavigation",
+        "*://*/_generated_background_page.html"
+    ]
+}
