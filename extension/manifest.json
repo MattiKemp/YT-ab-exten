@@ -11,7 +11,7 @@
     "page_action":{
         "default_icon":"icon16.png",
         "default_popup":"popup.html",
-        "default_title":"Canvas Fix"
+        "default_title":"YouTube Adblock"
     },
     "options_page" :"options.html",
     "background":{
@@ -20,15 +20,15 @@
     },
     "content_scripts":[
         {
-            "matches":["https://youtube.com/*"],
+            "matches":["https://www.youtube.com/*"],
             "js":["content.js"],
             "css":["content.css"],
-            "run_at": "document_start"
+            "run_at": "document_idle"
         }
     ],
     "permissions": [
         "tabs",
-        "https://youtube.com/*",
+        "https://www.youtube.com/*",
         "storage",
         "contextMenus",
         "webNavigation",
